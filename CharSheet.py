@@ -65,6 +65,13 @@ class CharSheet:
                 abilities["CON"] = abilities_array.pop(0)
                 abilities["WIS"] = abilities_array.pop(0)
                 abilities["CHA"] = abilities_array.pop(0)
+            case "bard":
+                abilities["STR"] = abilities_array.pop(0)
+                abilities["INT"] = abilities_array.pop(0)
+                abilities["DEX"] = abilities_array.pop(0)
+                abilities["CON"] = abilities_array.pop(0)
+                abilities["WIS"] = abilities_array.pop(0)
+                abilities["CHA"] = max_value
         return abilities
 
     def get_CON_modifier(self):
@@ -186,15 +193,15 @@ if __name__ == '__main__':
         print("HP: ", char_sheet.get_max_hp())
 
         print("Modifier: ")
-        print("STR: ", char_sheet.get_STR_modifier())
-        print("DEX: ", char_sheet.get_DEX_modifier())
-        print("CON: ", char_sheet.get_CON_modifier())
-        print("WIS: ", char_sheet.get_WIS_modifier())
-        print("INT: ", char_sheet.get_INT_modifier())
-        print("CHA: ", char_sheet.get_CHA_modifier())
+        print("STR: ", round(char_sheet.get_STR_modifier()))
+        print("DEX: ", round(char_sheet.get_DEX_modifier()))
+        print("CON: ", round(char_sheet.get_CON_modifier()))
+        print("WIS: ", round(char_sheet.get_WIS_modifier()))
+        print("INT: ", round(char_sheet.get_INT_modifier()))
+        print("CHA: ", round(char_sheet.get_CHA_modifier()))
        # print("modifier ", char_sheet.get_modifier())
         print("equip: ", char_sheet.equip_slot)
-        print("AC: ", char_sheet.get_ac())
+        print("AC: ", round(char_sheet.get_ac()))
 
 
     def get_file():
