@@ -51,19 +51,19 @@ class Armor(Equipment):
     heavy_armor_class = {"Ring Mail", "Chain Mail", "Splint", "Plate"}
     shield_armor_class = {"Shield"}
 
-    def __init__(self, name):
-        self.armor = name
+    def __init__(self, armor):
+        self.name = armor
         if self.get_armor_type() is None:
-            raise ValueError(f"Armor {name} is not supported")
+            raise ValueError(f"Armor {armor} is not supported")
 
     def get_armor_type(self):
-        if self.armor in Armor.simple_armor_class:
+        if self.name in Armor.simple_armor_class:
             return "Simple"
-        if self.armor in Armor.light_armor_class:
+        if self.name in Armor.light_armor_class:
             return "Light"
-        if self.armor in Armor.medium_armor_class:
+        if self.name in Armor.medium_armor_class:
             return "Medium"
-        if self.armor in Armor.heavy_armor_class:
+        if self.name in Armor.heavy_armor_class:
             return "Heavy"
 
     def get_armor_class(self):
@@ -81,7 +81,7 @@ class Armor(Equipment):
 
     def get_ac_l_armor(self):
         armor_ac = 11
-        match self.armor:
+        match self.name:
             case "Padded":
                 armor_ac = armor_ac
             case "Leather":
@@ -92,7 +92,7 @@ class Armor(Equipment):
 
     def get_ac_m_armor(self):
         armor_ac = 12
-        match self.armor:
+        match self.name:
             case "Hide":
                 armor_ac = armor_ac
             case "Chain Shirt":
@@ -107,7 +107,7 @@ class Armor(Equipment):
 
     def get_ac_h_armor(self):
         armor_ac = 14
-        match self.armor:
+        match self.name:
             case "Ring Mail":
                 armor_ac = armor_ac
             case "Chain Mail":
@@ -121,7 +121,7 @@ class Armor(Equipment):
 
 if __name__ == '__main__':
     def print_char_info(armor):
-        print(f"Create character sheet with armor type [{armor.get_armor_type()}], armor[{armor.armor}]")
+        print(f"Create character sheet with armor type [{armor.get_armor_type()}], armor[{armor.name}]")
         print("Armor's AC: ", armor.get_armor_class())
 
 

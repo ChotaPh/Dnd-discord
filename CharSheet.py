@@ -200,7 +200,13 @@ if __name__ == '__main__':
         print("INT: ", round(char_sheet.get_INT_modifier()))
         print("CHA: ", round(char_sheet.get_CHA_modifier()))
        # print("modifier ", char_sheet.get_modifier())
-        print("equip: ", char_sheet.equip_slot)
+        equipment_name = []
+        for equipment in char_sheet.equip_slot:
+           equipment_name.append(equipment.name)
+        print(equipment_name)
+
+     #  print("equip: ", char_sheet.equip_slot[0].name)
+     #  print("equip: ", char_sheet.equip_slot[1].name)
         print("AC: ", round(char_sheet.get_ac()))
 
 
@@ -234,14 +240,15 @@ if __name__ == '__main__':
     # # ASCII
     # print("get_file_result:", get_file_result)
     #
-    armor = Armor("Hide")
-    shield = Shield("Shield")
+
     char_wiz = CharSheet(r_race, r_class, r_level)
     # char_wiz.equip_item(armor.armor)
     # char_wiz.equip_item(shield.name)
     # print_char_info(char_wiz)
     char_wiz.equip_item(armor)
     char_wiz.equip_item(shield)
+    char_wiz.unequip_item(armor)
+    char_wiz.equip_item(armor)
     print_char_info(char_wiz)
 
 
