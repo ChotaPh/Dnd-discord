@@ -6,8 +6,7 @@ from Equipment import Equipment
 
 
 class Shield(Equipment):
-    def __init__(self, name):
-        self.name = name
-
+    def __init__(self, shield):
+        self.name = shield
     def get_armor_class(self):
         return 2
