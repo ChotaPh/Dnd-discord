@@ -20,7 +20,7 @@ class CharSheet:
     '''
 
 
-    shield = Shield("Shield")
+
 
     def __init__(self, char_race, char_class, char_lv):
         self.char_race = char_race
@@ -176,7 +176,7 @@ class CharSheet:
 
 
 if __name__ == '__main__':
-    armor = Armor("Hide")
+    armor = Armor("Plate")
     shield = Shield("Shield")
     def print_char_info(char_sheet: CharSheet):
         print(f"Create character sheet with race [{char_sheet.char_race}], class [{char_sheet.char_class}], level [{char_sheet.char_lv}]")
