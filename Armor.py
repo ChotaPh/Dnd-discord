@@ -51,10 +51,10 @@ class Armor(Equipment):
     heavy_armor_class = {"Ring Mail", "Chain Mail", "Splint", "Plate"}
     shield_armor_class = {"Shield"}
 
-    def __init__(self, armor):
-        self.name = armor
-        if self.get_armor_type() is None:
-            raise ValueError(f"Armor {armor} is not supported")
+  # def __init__(self, armor):
+  #     self.name = armor
+  #     if self.get_armor_type() is None:
+  #         raise ValueError(f"Armor {armor} is not supported")
 
     def get_armor_type(self):
         if self.name in Armor.simple_armor_class:
