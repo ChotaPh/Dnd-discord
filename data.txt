@@ -1,4 +1,3 @@
 human
 wizard
 12
-Robe
