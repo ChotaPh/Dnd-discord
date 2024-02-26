@@ -140,12 +140,14 @@ class CharSheet:
     def get_ac(self):
         armor_class = self._get_armor_ac()
         for equipment in self.equip_slot:
+            '''equipment have function get_armor_class but not instance of Armor > its shield'''
             if hasattr(equipment, 'get_armor_class') and not isinstance(equipment, Armor):
                 armor_class += equipment.get_armor_class()
         return armor_class
 
     def _get_armor_ac(self):
         armor_class = 10
+        '''scan equipment in equip_slot if its an instance of Armor '''
         for equipment in self.equip_slot:
             if isinstance(equipment, Armor):
                 armor_class = equipment.get_armor_class()
